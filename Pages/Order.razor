@@ -1,0 +1,392 @@
+﻿<!--
+    This Razor component represents the order page ("/order") of the POS (Point of Sale) system.
+    Users can select and customize coffees, place orders, and receive discounts/free items based on their order history.
+-->
+@page "/order"
+@using Cw.Data
+@using iText.Layout.Element
+@inject NavigationManager NavigationManager
+
+
+<h3>Order Coffee</h3>
+@code {
+    // Lists to store available coffees, add-ons, and ordered coffees
+    List<Coffee> availableCoffees = new List<Coffee>
+{
+    new Coffee { Name = "Espresso", Price = 2.50m, },
+    new Coffee { Name = "Latte", Price = 3.50m },
+    new Coffee { Name = "Cappuccino", Price = 3.00m },
+    new Coffee { Name = "Americano", Price = 2.75m },
+    new Coffee { Name = "Mocha", Price = 4.00m },
+    new Coffee { Name = "Flat White", Price = 3.75m }
+    // Add more coffee options as needed
+};
+
+
+    List<Coffee> orderedCoffees = new List<Coffee>();
+
+
+    Dictionary<string, List<AddOns>> coffeAddonsMap = new Dictionary<string, List<AddOns>>()
+    {
+        {"Espresso", new List<AddOns>()
+        {
+            new AddOns() { Name = "Extra Shot", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Caramel Syrup", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Vanilla Flavor", AddOnPrice = 2.50m },
+        }},
+        {"Latte", new List<AddOns>()
+        {
+            new AddOns() { Name = "Extra Shot", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Caramel Syrup", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Vanilla Flavor", AddOnPrice = 2.50m },
+        }},
+        {"Cappuccino", new List<AddOns>()
+        {
+            new AddOns() { Name = "Extra Shot", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Caramel Syrup", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Vanilla Flavor", AddOnPrice = 2.50m },
+        }},
+
+        {"Americano", new List<AddOns>()
+        {
+            new AddOns() { Name = "Extra Shot", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Caramel Syrup", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Vanilla Flavor", AddOnPrice = 2.50m },
+        }},
+        {"Mocha", new List<AddOns>()
+        {
+            new AddOns() { Name = "Extra Shot", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Caramel Syrup", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Vanilla Flavor", AddOnPrice = 2.50m },
+        }},
+        {"Flat White", new List<AddOns>()
+        {
+            new AddOns() { Name = "Extra Shot", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Caramel Syrup", AddOnPrice = 2.50m },
+            new AddOns() { Name = "Vanilla Flavor", AddOnPrice = 2.50m },
+        }},
+    };
+
+
+    bool isOrderComplete = false;
+    decimal totalOrderPrice = 0;
+    private Member member = new Member();
+    SimpleOrder currentOrder;
+    private String CheckPhoneNumber;
+    private Member foundMember;
+    string p1 = "D:\\CourseWork\\Members.json";
+    private decimal discountedPrice;
+
+    // Method to place selected coffees into the order
+    void PlaceOrder()
+    {
+        var selectedCoffees = availableCoffees.Where(c => c.Selected).ToList();
+        var clonedCoffees = selectedCoffees.Select(coffee => new Coffee
+            {
+                Name = coffee.Name,
+                Price = coffee.Price,
+                AddOns = new List<AddOns>(coffee.AddOns)
+            }).ToList();
+        orderedCoffees.AddRange(clonedCoffees);
+        ClearSelection();
+    }
+
+    // Method to complete the order
+    void CompleteOrder()
+    {
+        isOrderComplete = true;
+        totalOrderPrice = orderedCoffees.Sum(coffee => coffee.TotalPrice);
+
+    }
+
+    // Method to clear coffee selections
+    void ClearSelection()
+    {
+        foreach (var coffee in availableCoffees)
+        {
+            coffee.Selected = false;
+        }
+    }
+
+    // Method to get the price for a selected add-on
+    decimal GetAddOnPrice(string addOn)
+    {
+        return 0.75m;
+    }
+
+    // Method to remove a selected coffee from the order
+    private void RemoveCoffee(Coffee coffeeToRemove)
+    {
+        orderedCoffees.Remove(coffeeToRemove);
+    }
+
+    // Method to check the phone number and retrieve member information
+    void CheckPhoneNumberAndRetrieveInfo()
+    {
+        string jsonFromFile = File.ReadAllText(p1);
+
+        List<Member> allMembersList = JsonSerializer.Deserialize<List<Member>>(jsonFromFile);
+
+        foundMember = allMembersList.FirstOrDefault(m => m.PhoneNumber == CheckPhoneNumber);
+        if (foundMember != null)
+        {
+            // Update OrderCount with the count of ordered coffees
+            foundMember.OrderCount += orderedCoffees.Count;
+            // Update OrderCount for the foundMember only
+            UpdateOrderCountForFoundMember(foundMember);
+
+            // Update the JSON file
+            UpdateJsonFile(allMembersList);
+
+            if (foundMember.IsRegular == true)
+            {
+                discountedPrice = totalOrderPrice * 0.85M;
+
+            }
+
+        }
+        else
+        {
+            StoreToOrder();
+            ClearOrderDetails();
+
+        }
+
+    }
+
+    private AllOrdersList listOfAllOrders = new();
+
+    // Method to submit the order form
+    void SubmitForm()
+    {
+        CheckPhoneNumberAndRetrieveInfo();
+        StoreToOrder();
+    }
+
+    // Method to store the order details
+    void StoreToOrder()
+    {
+        // Check if a discounted price is applicable
+        if (discountedPrice != 0)
+        {
+            totalOrderPrice = discountedPrice;
+        }
+
+        // Create a new SimpleOrder with current date and time, total price, phone number, and coffee details
+        currentOrder = new SimpleOrder
+            {
+                DateTime = DateTime.Now,
+                Price = totalOrderPrice,
+                PhoneNumber = CheckPhoneNumber,
+                Coffees = orderedCoffees.Select(coffee => new CoffeeDetails
+                {
+                    CoffeeName = coffee.Name,
+                    Addon = coffee.AddOns.Any() ? string.Join(", ", coffee.AddOns) : null,
+                    Price = coffee.TotalPrice
+                }).ToList()
+            };
+
+        // Define the directory path for storing order data
+        string p1 = "D:\\CourseWork";
+
+        // Ensure the directory exists, create it if necessary
+        if (!Directory.Exists(p1))
+        {
+            Directory.CreateDirectory(p1);
+        }
+
+        // Define the full file path for the "Orders.json" file
+        string commonFilePath = Path.Combine(p1, "Orders.json");
+
+        // Check if the file exists
+        if (!File.Exists(commonFilePath))
+        {
+            // If the file doesn't exist, create a new list of orders and save it to the file
+            listOfAllOrders = new AllOrdersList();
+            listOfAllOrders.AllOrders.Add(currentOrder);
+            string detailsJson = JsonSerializer.Serialize(listOfAllOrders);
+            File.WriteAllText(commonFilePath, detailsJson);
+        }
+        else
+        {
+            // If the file exists, read the existing orders, append the new order, and save the updated list
+            string jsonFromFile = File.ReadAllText(commonFilePath);
+            AllOrdersList list_a = JsonSerializer.Deserialize<AllOrdersList>(jsonFromFile);
+            list_a.AllOrders.Add(currentOrder);
+            string newJson = JsonSerializer.Serialize(list_a);
+            File.WriteAllText(commonFilePath, newJson);
+        }
+    }
+
+    void UpdateOrderCountForFoundMember(Member memberToUpdate)
+    {
+        // Update the OrderCount for the foundMember only
+        memberToUpdate.OrderCount = foundMember.OrderCount;
+
+    }
+
+    private void UpdateJsonFile(List<Member> updatedMembersList)
+    {
+        // Write the updated list back to the JSON file
+        string updatedJson = JsonSerializer.Serialize(updatedMembersList, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(p1, updatedJson);
+    }
+
+    private void ClaimFreeCoffee()
+    {
+        // Decrease the order count by 10
+        foundMember.OrderCount -= 10;
+        UpdateOrderCountForFoundMember(foundMember);
+        ClearOrderDetails();
+
+        // Redirect to another page (replace "path-to-another-page" with the actual path)
+        NavigationManager.NavigateTo("/order");
+    }
+
+    // Method to return to the order page
+    private void ReturnToOrder()
+    {
+        ClearOrderDetails();
+        NavigationManager.NavigateTo("/order");
+    }
+
+    // Method to clear the ordered coffees list and reset other order-related variables
+    private void ClearOrderDetails()
+    {
+        orderedCoffees.Clear();
+        isOrderComplete = false;
+        totalOrderPrice = 0;
+        CheckPhoneNumber = null;
+        foundMember = null;
+        discountedPrice = 0;
+        ClearSelection();
+    }
+
+    public void ToggleAddon(ChangeEventArgs e, AddOns addOn, Coffee coffee)
+    {
+        if ((bool)e.Value)
+        {
+            coffee.AddOns.Add(addOn);
+        }
+
+        else
+        {
+            coffee.AddOns.Remove(addOn);
+        }
+    }
+}
+
+@if (!isOrderComplete)
+{
+    <div>
+        @if (orderedCoffees.Any())
+        {
+            <h4>Ordered Coffees:</h4>
+            <ul>
+                @foreach (var coffee in orderedCoffees)
+                {
+                    <li>
+                        @coffee.Name - $@coffee.Price
+                        @if (coffee.AddOns.Any())
+                        {
+                            <span> with Add-Ons (@string.Join(", ", coffee.AddOns.Select(((a) => a.Name))) - $@coffee.AddOns.Sum(a => a.AddOnPrice)</span>
+                        }
+                        <span> Total Price: $@coffee.TotalPrice</span>
+                        <button class="btn btn-danger" @onclick="() => RemoveCoffee(coffee)">Remove</button>
+                    </li>
+                }
+            </ul>
+        }
+
+        <h4>Select Coffee:</h4>
+        <div>
+            @foreach (var coffee in availableCoffees)
+            {
+                <div>
+                    <label>
+                        <input type="checkbox" @bind="coffee.Selected" /> @coffee.Name - $@coffee.Price
+                    </label>
+
+                    <span>Addons</span>
+                    <!-- Use the correct variable for the inner loop -->
+                    @foreach (var addOn in coffeAddonsMap[coffee.Name])
+                    {
+                        <div style="display:inline-block;margin: 4px;">
+                            <!-- Use the correct variables for the inner loop -->
+                            <label>
+                                <input type="checkbox" @onchange="(selected) => ToggleAddon(selected, addOn, coffee)" /> @addOn.Name - $@addOn.AddOnPrice
+                            </label>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+
+
+        <button @onclick="PlaceOrder">Add to Order</button>
+        <button @onclick="CompleteOrder">Complete Order</button>
+
+    </div>
+}
+else
+{
+    <div>
+        <h4>Your Complete Order:</h4>
+        <ul>
+            @foreach (var coffee in orderedCoffees)
+            {
+                <li>
+                    @coffee.Name - $@coffee.Price
+                    @if (coffee.AddOns.Any())
+                    {
+                        //<span> with Add-Ons (@string.Join(", ", coffee.AddOns)) - $@coffee.AddOnPrice</span>
+                    }
+                    <span> Total Price: $@coffee.TotalPrice</span>
+
+                </li>
+            }
+        </ul>
+        <p>Total Order Price: $@totalOrderPrice</p>
+        <p>Thank you for your order!</p>
+
+
+        <form>
+            <div class="form-group">
+                <label for="phoneNumberInput">Phone Number:</label>
+                <input type="tel" class="form-control" id="phoneNumberInput" @bind="CheckPhoneNumber" required pattern="[0-9]{10}">
+            </div>
+
+            <button type="button" class="btn btn-primary" @onclick="SubmitForm">Submit</button>
+        </form>
+
+    </div>
+
+}
+@if (foundMember != null)
+
+{
+    @if (foundMember.IsRegular == true)
+    {
+        <p>Discounted Price: $@discountedPrice</p>
+    }
+    @if (foundMember.OrderCount > 10)
+    {
+        <div>
+            <h4>Do you want a free coffee?</h4>
+            <button class="btn btn-success" @onclick="ClaimFreeCoffee">Yes</button>
+            <button class="btn btn-danger" @onclick="ReturnToOrder">No, Return to Order</button>
+        </div>
+    }
+    else
+    {
+        <button class="btn btn-danger" @onclick="ReturnToOrder">Return to Order</button>
+
+    }
+
+
+}
+
+
+
+
+

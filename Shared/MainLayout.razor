@@ -1,0 +1,62 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+
+
+
+<div class="main">
+    <div class="content">
+        @Body
+    </div>
+
+    @if (ShouldShowLogoutButton())
+    {
+        <div class="logout-button">
+            <button class="btn btn-outline-dark" @onclick="Logout">Logout</button>
+        </div>
+    }
+</div>
+
+<style>
+    .main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .content {
+        flex-grow: 1;
+    }
+
+    .logout-button {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .logout-button button {
+        background-color: #343a40;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    .logout-button button:hover {
+        background-color: #fff;
+        color: #343a40;
+        border: 1px solid #343a40;
+    }
+</style>
+
+@code {
+    private void Logout()
+    {
+        // Add logic to perform logout actions
+        NavigationManager.NavigateTo("/login");
+    }
+
+    private bool ShouldShowLogoutButton()
+    {
+        return NavigationManager.Uri.Contains("/admin", StringComparison.OrdinalIgnoreCase)
+            || NavigationManager.Uri.Contains("/order", StringComparison.OrdinalIgnoreCase);
+    }
+}

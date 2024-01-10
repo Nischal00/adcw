@@ -1,0 +1,77 @@
+﻿@page "/transactions"
+@using Cw.Data
+@using System.IO
+@inject NavigationManager NavigationManager
+
+<h3>Purchases/Sales Transactions</h3>
+
+<!-- Display a table of purchases/sales transactions, including date & time, total price, phone number, and coffee details. -->
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Date & Time</th>
+            <th>Total Price</th>
+            <th>Phone Number</th>
+            <th>Coffees</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Iterate through each order and display its details in a table row. -->
+        @foreach (var order in allOrders.AllOrders)
+        {
+            <tr>
+                <!-- Display order date & time, total price, phone number, and coffee details. -->
+                <td>@order.DateTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                <td>@order.Price.ToString("C")</td>
+                <td>@order.PhoneNumber</td>
+                <td>
+                    <!-- Display a list of coffees in the order with their names, addons, and prices. -->
+                    <ul>
+                        @foreach (var coffee in order.Coffees)
+                        {
+                            <li>@coffee.CoffeeName - @coffee.Addon (@coffee.Price.ToString("C"))</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Button to navigate back to the admin page. -->
+<button class="btn btn-secondary" @onclick="NavigateBack">Back </button>
+
+@code {
+    // Data model to store all orders.
+    private AllOrdersList allOrders;
+
+    // Initialize the component by loading orders.
+    protected override void OnInitialized()
+    {
+        LoadOrders();
+    }
+
+    // Load orders from a JSON file.
+    private void LoadOrders()
+    {
+        string orderFilePath = "D:\\CourseWork\\Orders.json";
+
+        // Check if the file exists, read its content, and deserialize into the data model.
+        if (File.Exists(orderFilePath))
+        {
+            string jsonFromFile = File.ReadAllText(orderFilePath);
+            allOrders = JsonSerializer.Deserialize<AllOrdersList>(jsonFromFile);
+        }
+        else
+        {
+            // If the file doesn't exist, initialize an empty order list.
+            allOrders = new AllOrdersList();
+        }
+    }
+
+    // Navigate back to the admin page.
+    private void NavigateBack()
+    {
+        NavigationManager.NavigateTo("/admin");
+    }
+}

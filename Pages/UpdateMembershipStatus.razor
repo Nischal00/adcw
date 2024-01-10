@@ -1,0 +1,165 @@
+﻿@page "/updatememberstatus"
+@inject NavigationManager NavigationManager
+@using Cw.Data
+
+<h3>Update Member Status</h3>
+
+@if (!isPhoneNumberEntered)
+{
+    <EditForm Model="@phoneNumberModel" OnValidSubmit="@CheckPhoneNumber">
+        <div class="form-group">
+            <label for="phoneNumber">Enter Phone Number:</label>
+            <InputText id="phoneNumber" @bind-Value="phoneNumberModel.PhoneNumber" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Check Phone Number</button>
+        <button type="button" class="btn btn-secondary" @onclick="NavigateBack">Back</button>
+    </EditForm>
+}
+else
+{
+    <EditForm Model="@updateModel" OnValidSubmit="@PerformMemberStatusUpdate">
+        <div class="form-group">
+            <label for="isRegular">Is Regular:</label>
+            <select class="form-control" id="isRegular" @bind="@updateModel.IsRegular">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Member Status</button>
+    </EditForm>
+
+
+    @if (isUpdateSuccessful.HasValue)
+    {
+        <div class="alert @alertClass" role="alert">
+            @if (isUpdateSuccessful.Value)
+            {
+                <p>@alertMessage</p>
+            }
+            else
+            {
+                <p>An error occurred while updating the member status.</p>
+            }
+            <button type="button" class="close" @onclick="ResetUpdateStatus">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+}
+
+@code {
+    private PhoneNumberModel phoneNumberModel = new PhoneNumberModel();
+    private UpdateMemberModel updateModel = new UpdateMemberModel();
+    private bool? isUpdateSuccessful = null;
+    private bool isPhoneNumberEntered = false;
+    private string alertMessage = "";
+    private string alertClass = "";
+
+    private void CheckPhoneNumber()
+    {
+        string p1 = "D:\\CourseWork\\Members.json";
+
+        if (File.Exists(p1))
+        {
+            // Read the existing list from the file
+            string jsonFromFile = File.ReadAllText(p1);
+            List<Member> membersList = JsonSerializer.Deserialize<List<Member>>(jsonFromFile);
+
+            // Check if the phone number exists in the members list
+            if (membersList.Any(m => m.PhoneNumber == phoneNumberModel.PhoneNumber))
+            {
+                // Set the flag to indicate phone number entered
+                isPhoneNumberEntered = true;
+            }
+            else
+            {
+                // Set the alert message for member not found
+                SetAlert("Member not found. Please check the phone number.", "alert-danger");
+            }
+        }
+        else
+        {
+            // Set the alert message for file not found
+            SetAlert("Error: Members file not found.", "alert-danger");
+        }
+    }
+
+    private void PerformMemberStatusUpdate()
+    {
+        string p1 = "D:\\CourseWork\\Members.json";
+
+        if (File.Exists(p1))
+        {
+            // Read the existing list from the file
+            string jsonFromFile = File.ReadAllText(p1);
+            List<Member> membersList = JsonSerializer.Deserialize<List<Member>>(jsonFromFile);
+
+            // Find the member based on the provided phone number
+            Member foundMember = membersList.FirstOrDefault(m => m.PhoneNumber == phoneNumberModel.PhoneNumber);
+
+            if (foundMember != null)
+            {
+                // Update the IsRegular status based on admin input
+                foundMember.IsRegular = updateModel.IsRegular;
+
+                // Serialize the updated list and write to the file
+                string updatedJson = JsonSerializer.Serialize(membersList, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(p1, updatedJson);
+
+                // Set the flag to indicate successful update
+                isUpdateSuccessful = true;
+                SetAlert("Member status updated successfully!", "alert-success");
+            }
+            else
+            {
+                // Set the alert message for member not found
+                SetAlert("Error: Member not found.", "alert-danger");
+            }
+        }
+        else
+        {
+            // Set the alert message for file not found
+            SetAlert("Error: Members file not found.", "alert-danger");
+        }
+    }
+
+    private void ResetUpdateStatus()
+    {
+        // Reset the flags and clear form inputs
+        isUpdateSuccessful = null;
+        isPhoneNumberEntered = false;
+        phoneNumberModel = new PhoneNumberModel();
+        updateModel = new UpdateMemberModel();
+    }
+
+    private void SetAlert(string message, string cssClass)
+    {
+        // Set the alert message and class
+        alertMessage = message;
+        alertClass = cssClass;
+
+        // Reset the alert after a few seconds (you can adjust the delay)
+        Task.Delay(5000).ContinueWith(_ =>
+        {
+            alertMessage = "";
+            alertClass = "";
+            StateHasChanged();
+        });
+    }
+
+    public class PhoneNumberModel
+    {
+        public string PhoneNumber { get; set; }
+    }
+
+    public class UpdateMemberModel
+    {
+        public bool IsRegular { get; set; }
+    }
+    private void NavigateBack()
+    {
+        NavigationManager.NavigateTo("/admin");
+    }
+}

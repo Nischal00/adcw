@@ -1,0 +1,138 @@
+﻿@page "/sales"
+@using Cw.Data
+@using System.IO
+@using System.Text
+@inject NavigationManager NavigationManager
+
+<h3>Sales Report</h3>
+
+<label for="datepicker">Select Date or Month:</label>
+<input type="date" id="datepicker" @bind="selectedDate" />
+<button class="btn btn-primary" @onclick="GenerateHtmlReport">Generate Report</button>
+<button class="btn btn-secondary" @onclick="NavigateBack">Back to Home</button>
+
+@code {
+    private DateTime selectedDate;
+    private AllOrdersList allOrders;
+
+    protected override void OnInitialized()
+    {
+        LoadOrders();
+    }
+
+    private void LoadOrders()
+    {
+        string orderFilePath = "D:\\CourseWork\\Order.json";
+
+        if (File.Exists(orderFilePath))
+        {
+            string jsonFromFile = File.ReadAllText(orderFilePath);
+            allOrders = JsonSerializer.Deserialize<AllOrdersList>(jsonFromFile);
+        }
+        else
+        {
+            allOrders = new AllOrdersList();
+        }
+    }
+
+    private void GenerateHtmlReport()
+    {
+        // Filter orders for the selected date or month
+        var selectedOrders = allOrders.AllOrders
+            .Where(order => order.DateTime.Date == selectedDate.Date || order.DateTime.Month == selectedDate.Month)
+            .ToList();
+
+        // Check if there are orders for the selected date or month
+        if (selectedOrders.Count == 0)
+        {
+            // Handle the case where no orders are found for the selected date or month
+            return;
+        }
+
+
+        // Create a StringBuilder to construct the HTML content
+        var htmlContent = new StringBuilder();
+
+        // HTML header
+        htmlContent.AppendLine("<html><head><title>Sales Report</title></head><body>");
+
+        // Add title to the document
+        htmlContent.AppendLine($"<h1>Sales Report - {selectedDate:yyyy-MM-dd}</h1>");
+
+        // Revenue and top 5 most-purchased coffees and add-ins
+        decimal totalRevenue = 0;
+        var coffeeFrequency = new Dictionary<string, int>();
+        var addInFrequency = new Dictionary<string, int>();
+
+        foreach (var order in selectedOrders)
+        {
+            totalRevenue += order.Price;
+
+            foreach (var coffee in order.Coffees)
+            {
+                // Update coffee frequency
+                if (coffeeFrequency.ContainsKey(coffee.CoffeeName))
+                {
+                    coffeeFrequency[coffee.CoffeeName]++;
+                }
+                else
+                {
+                    coffeeFrequency[coffee.CoffeeName] = 1;
+                }
+
+                // Update add-in frequency
+                if (!string.IsNullOrEmpty(coffee.Addon))
+                {
+                    if (addInFrequency.ContainsKey(coffee.Addon))
+                    {
+                        addInFrequency[coffee.Addon]++;
+                    }
+                    else
+                    {
+                        addInFrequency[coffee.Addon] = 1;
+                    }
+                }
+            }
+        }
+
+        // Sort coffee and add-in frequencies
+        var top5Coffees = coffeeFrequency.OrderByDescending(kv => kv.Value).Take(5);
+        var top5AddIns = addInFrequency.OrderByDescending(kv => kv.Value).Take(5);
+
+        // Display revenue
+        htmlContent.AppendLine($"<p>Total Revenue: {totalRevenue:C}</p>");
+
+        // Display top 5 most-purchased coffees
+        htmlContent.AppendLine("<h2>Top 5 Most-Purchased Coffees</h2>");
+        htmlContent.AppendLine("<ul>");
+        foreach (var coffee in top5Coffees)
+        {
+            htmlContent.AppendLine($"<li>{coffee.Key}: {coffee.Value} times</li>");
+        }
+        htmlContent.AppendLine("</ul>");
+
+        // Display top 5 most-purchased add-ins
+        htmlContent.AppendLine("<h2>Top 5 Most-Purchased Add-Ins</h2>");
+        htmlContent.AppendLine("<ul>");
+        foreach (var addIn in top5AddIns)
+        {
+            htmlContent.AppendLine($"<li>{addIn.Key}: {addIn.Value} times</li>");
+        }
+        htmlContent.AppendLine("</ul>");
+
+        // HTML footer
+        htmlContent.AppendLine("</body></html>");
+
+        // Save the HTML content to a file
+        string htmlFilePath = $"D:\\CourseWork\\DailySalesReport_{selectedDate:yyyyMMdd}.html";
+        File.WriteAllText(htmlFilePath, htmlContent.ToString());
+
+        // Open the generated HTML file
+        System.Diagnostics.Process.Start(htmlFilePath);
+    }
+
+    private void NavigateBack()
+    {
+        NavigationManager.NavigateTo("/admin");
+    }
+}
