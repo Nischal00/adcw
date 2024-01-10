@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net7.0-android33.0": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.9.1.1": {
         "type": "package",
         "compile": {
@@ -99,6 +112,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -116,10 +146,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -660,15 +718,15 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -2714,6 +2772,19 @@
       }
     },
     "net7.0-android33.0/android-arm": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.9.1.1": {
         "type": "package",
         "compile": {
@@ -2811,6 +2882,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -2828,10 +2916,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -3372,15 +3488,15 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -5366,6 +5482,19 @@
       }
     },
     "net7.0-android33.0/android-arm64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.9.1.1": {
         "type": "package",
         "compile": {
@@ -5463,6 +5592,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -5480,10 +5626,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -6024,15 +6198,15 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -8018,6 +8192,19 @@
       }
     },
     "net7.0-android33.0/android-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.9.1.1": {
         "type": "package",
         "compile": {
@@ -8115,6 +8302,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -8132,10 +8336,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -8676,15 +8908,15 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -10670,6 +10902,19 @@
       }
     },
     "net7.0-android33.0/android-x86": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.9.1.1": {
         "type": "package",
         "compile": {
@@ -10767,6 +11012,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -10784,10 +11046,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -11328,15 +11618,15 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -13322,6 +13612,19 @@
       }
     },
     "net7.0-android33.0/iossimulator-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.9.1.1": {
         "type": "package",
         "compile": {
@@ -13419,6 +13722,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -13436,10 +13756,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -13980,15 +14328,15 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -15974,6 +16322,19 @@
       }
     },
     "net7.0-android33.0/maccatalyst-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.9.1.1": {
         "type": "package",
         "compile": {
@@ -16071,6 +16432,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -16088,10 +16466,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -16632,15 +17038,15 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -18626,6 +19032,19 @@
       }
     },
     "net7.0-android33.0/win10-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "GoogleGson/2.9.1.1": {
         "type": "package",
         "compile": {
@@ -18723,6 +19142,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -18740,10 +19176,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -19284,15 +19748,15 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -21278,6 +21742,19 @@
       }
     },
     "net7.0-ios16.1": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -21362,6 +21839,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -21379,10 +21873,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -21982,15 +22504,15 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -23097,6 +23619,19 @@
       }
     },
     "net7.0-ios16.1/android-arm": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -23181,6 +23716,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -23198,10 +23750,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -23795,15 +24375,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -25035,6 +25615,19 @@
       }
     },
     "net7.0-ios16.1/android-arm64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -25119,6 +25712,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -25136,10 +25746,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -25733,15 +26371,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -26973,6 +27611,19 @@
       }
     },
     "net7.0-ios16.1/android-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -27057,6 +27708,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -27074,10 +27742,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -27671,15 +28367,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -28911,6 +29607,19 @@
       }
     },
     "net7.0-ios16.1/android-x86": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -28995,6 +29704,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -29012,10 +29738,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -29609,15 +30363,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -30849,6 +31603,19 @@
       }
     },
     "net7.0-ios16.1/iossimulator-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -30933,6 +31700,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -30950,10 +31734,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -31547,15 +32359,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -32784,6 +33596,19 @@
       }
     },
     "net7.0-ios16.1/maccatalyst-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -32868,6 +33693,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -32885,10 +33727,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -33482,15 +34352,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -34719,6 +35589,19 @@
       }
     },
     "net7.0-ios16.1/win10-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -34803,6 +35686,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -34820,10 +35720,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -35417,15 +36345,15 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -36665,6 +37593,19 @@
       }
     },
     "net7.0-maccatalyst16.1": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -36749,6 +37690,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -36766,10 +37724,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -37369,15 +38355,15 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -38484,6 +39470,19 @@
       }
     },
     "net7.0-maccatalyst16.1/android-arm": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -38568,6 +39567,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -38585,10 +39601,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -39182,15 +40226,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -40422,6 +41466,19 @@
       }
     },
     "net7.0-maccatalyst16.1/android-arm64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -40506,6 +41563,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -40523,10 +41597,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -41120,15 +42222,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -42360,6 +43462,19 @@
       }
     },
     "net7.0-maccatalyst16.1/android-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -42444,6 +43559,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -42461,10 +43593,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -43058,15 +44218,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -44298,6 +45458,19 @@
       }
     },
     "net7.0-maccatalyst16.1/android-x86": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -44382,6 +45555,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -44399,10 +45589,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -44996,15 +46214,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -46236,6 +47454,19 @@
       }
     },
     "net7.0-maccatalyst16.1/iossimulator-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -46320,6 +47551,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -46337,10 +47585,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -46934,15 +48210,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -48171,6 +49447,19 @@
       }
     },
     "net7.0-maccatalyst16.1/maccatalyst-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -48255,6 +49544,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -48272,10 +49578,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -48869,15 +50203,15 @@
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -50106,6 +51440,19 @@
       }
     },
     "net7.0-maccatalyst16.1/win10-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -50190,6 +51537,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -50207,10 +51571,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -50804,15 +52196,15 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -52052,6 +53444,19 @@
       }
     },
     "net7.0-windows10.0.19041": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -52136,6 +53541,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -52153,10 +53575,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -52883,15 +54333,15 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -53998,6 +55448,19 @@
       }
     },
     "net7.0-windows10.0.19041/android-arm": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -54082,6 +55545,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -54099,10 +55579,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -54795,15 +56303,15 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -56035,6 +57543,19 @@
       }
     },
     "net7.0-windows10.0.19041/android-arm64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -56119,6 +57640,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -56136,10 +57674,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -56832,15 +58398,15 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -58072,6 +59638,19 @@
       }
     },
     "net7.0-windows10.0.19041/android-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -58156,6 +59735,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -58173,10 +59769,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -58869,15 +60493,15 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -60109,6 +61733,19 @@
       }
     },
     "net7.0-windows10.0.19041/android-x86": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -60193,6 +61830,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -60210,10 +61864,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -60906,15 +62588,15 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -62146,6 +63828,19 @@
       }
     },
     "net7.0-windows10.0.19041/iossimulator-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -62230,6 +63925,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -62247,10 +63959,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -62943,15 +64683,15 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -64180,6 +65920,19 @@
       }
     },
     "net7.0-windows10.0.19041/maccatalyst-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -64264,6 +66017,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -64281,10 +66051,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -64977,15 +66775,15 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -66214,6 +68012,19 @@
       }
     },
     "net7.0-windows10.0.19041/win10-x64": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -66298,6 +68109,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -66315,10 +68143,38 @@
           }
         }
       },
+      "itext.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.html2pdf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext7/8.0.2": {
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
+        }
+      },
+      "itext7.pdfhtml/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.pdfhtml": "5.0.2"
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -67017,15 +68873,15 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -68266,6 +70122,26 @@
     }
   },
   "libraries": {
+    "BouncyCastle.Cryptography/2.2.1": {
+      "sha512": "A6Zr52zVqJKt18ZBsTnX0qhG0kwIQftVAjLmszmkiR/trSp8H+xj1gUOzk7XHwaKgyREMSV1v9XaKrBUeIOdvQ==",
+      "type": "package",
+      "path": "bouncycastle.cryptography/2.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.2.1.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
+      ]
+    },
     "GoogleGson/2.9.1.1": {
       "sha512": "OreKEL2Yx2u8YhRqv0e+j45cEzoe+fyMEzGN+M/vfBDPsIXQcA6lGdHXO07bTrGn6NNwxY67dyIfbyXx3A7cDA==",
       "type": "package",
@@ -68338,6 +70214,22 @@
         "lib/netstandard2.0/itext.svg.xml"
       ]
     },
+    "itext.bouncy-castle-adapter/8.0.2": {
+      "sha512": "djCnycEdSBcpRxPOm0vAwGiOBZRT6GX7kyg/Jezk0AsMuq2d6Qd4md8AzTcgnEaTLwc717QK6QVmzbT30wdG7w==",
+      "type": "package",
+      "path": "itext.bouncy-castle-adapter/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "itext.bouncy-castle-adapter.8.0.2.nupkg.sha512",
+        "itext.bouncy-castle-adapter.nuspec",
+        "lib/net461/itext.bouncy-castle-adapter.dll",
+        "lib/net461/itext.bouncy-castle-adapter.xml",
+        "lib/netstandard2.0/itext.bouncy-castle-adapter.dll",
+        "lib/netstandard2.0/itext.bouncy-castle-adapter.xml"
+      ]
+    },
     "itext.commons/8.0.2": {
       "sha512": "/F7j7XERA84XgIXDb4j/so1GagAToraVKZIRAdk/ibkvYoU1uwuILU2Ly28sSFf12NN7WIBQHKSk7njJl7Nk8g==",
       "type": "package",
@@ -68354,6 +70246,25 @@
         "lib/netstandard2.0/itext.commons.xml"
       ]
     },
+    "itext.pdfhtml/5.0.2": {
+      "sha512": "9KTtdaznWhiBLMuaj/9Y0Vmn3HDpN19U+mdCqAe7vl1fn1H8pnmUSx93aBLSScu/pWe9FGTIQXzwUeU37o66WA==",
+      "type": "package",
+      "path": "itext.pdfhtml/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "LICENSE.md",
+        "NOTICE.txt",
+        "gnu-agpl-v3.0.md",
+        "itext.pdfhtml.5.0.2.nupkg.sha512",
+        "itext.pdfhtml.nuspec",
+        "lib/net461/itext.html2pdf.dll",
+        "lib/net461/itext.html2pdf.xml",
+        "lib/netstandard2.0/itext.html2pdf.dll",
+        "lib/netstandard2.0/itext.html2pdf.xml"
+      ]
+    },
     "itext7/8.0.2": {
       "sha512": "IuFfSlMSTLqVGCIsxpcDL9kCtEfppSBjq4V+RgfrxnqEC+iNF4tCHiIdl8quyzTDbaHF4vNufxe2NXMJMkPlSw==",
       "type": "package",
@@ -68366,6 +70277,35 @@
         "gnu-agpl-v3.0.md",
         "itext7.8.0.2.nupkg.sha512",
         "itext7.nuspec"
+      ]
+    },
+    "itext7.bouncy-castle-adapter/8.0.2": {
+      "sha512": "cNtEkxFStPblWys1uhafXkUuSGFAH9vFqZ4H09IZPMo5TzJbjbeklgmBGrFu7IPHtOym03+1RHzVEKzfcd1deQ==",
+      "type": "package",
+      "path": "itext7.bouncy-castle-adapter/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itext7.bouncy-castle-adapter.8.0.2.nupkg.sha512",
+        "itext7.bouncy-castle-adapter.nuspec"
+      ]
+    },
+    "itext7.pdfhtml/5.0.2": {
+      "sha512": "Xgcvfa6hrQ0yl+WvP1BogU1UrU2ousX36xA88ucJX++iBxGQSUmrFzflQif7YaSAhloRa580I3TI197beU3TEA==",
+      "type": "package",
+      "path": "itext7.pdfhtml/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "LICENSE.md",
+        "NOTICE.txt",
+        "gnu-agpl-v3.0.md",
+        "itext7.pdfhtml.5.0.2.nupkg.sha512",
+        "itext7.pdfhtml.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authorization/7.0.11": {
@@ -70138,14 +72078,15 @@
         "tools/x86/GenXbf.dll"
       ]
     },
-    "Newtonsoft.Json/13.0.1": {
-      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
-      "path": "newtonsoft.json/13.0.1",
+      "path": "newtonsoft.json/13.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
+        "README.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -70154,13 +72095,15 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
         "lib/netstandard1.0/Newtonsoft.Json.dll",
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
         "lib/netstandard2.0/Newtonsoft.Json.dll",
         "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
@@ -76269,6 +78212,7 @@
       "Microsoft.Maui.Graphics >= 7.0.101",
       "Microsoft.NET.ILLink.Analyzers >= 7.0.100-1.23211.1",
       "Microsoft.NET.ILLink.Tasks >= 7.0.100-1.23211.1",
+      "Newtonsoft.Json >= 13.0.3",
       "Xamarin.Android.Glide >= 4.13.2.2",
       "Xamarin.AndroidX.Browser >= 1.4.0.3",
       "Xamarin.AndroidX.Legacy.Support.V4 >= 1.0.0.15",
@@ -76280,7 +78224,9 @@
       "Xamarin.AndroidX.Security.SecurityCrypto >= 1.1.0-alpha03",
       "Xamarin.Google.Android.Material >= 1.7.0",
       "Xamarin.Google.Crypto.Tink.Android >= 1.7.0.1",
-      "itext7 >= 8.0.2"
+      "itext7 >= 8.0.2",
+      "itext7.bouncy-castle-adapter >= 8.0.2",
+      "itext7.pdfhtml >= 5.0.2"
     ],
     "net7.0-ios16.1": [
       "Microsoft.AspNetCore.Components.WebView.Maui >= 7.0.101",
@@ -76291,7 +78237,10 @@
       "Microsoft.Maui.Graphics >= 7.0.101",
       "Microsoft.NET.ILLink.Analyzers >= 7.0.100-1.23211.1",
       "Microsoft.NET.ILLink.Tasks >= 7.0.100-1.23211.1",
-      "itext7 >= 8.0.2"
+      "Newtonsoft.Json >= 13.0.3",
+      "itext7 >= 8.0.2",
+      "itext7.bouncy-castle-adapter >= 8.0.2",
+      "itext7.pdfhtml >= 5.0.2"
     ],
     "net7.0-maccatalyst16.1": [
       "Microsoft.AspNetCore.Components.WebView.Maui >= 7.0.101",
@@ -76302,7 +78251,10 @@
       "Microsoft.Maui.Graphics >= 7.0.101",
       "Microsoft.NET.ILLink.Analyzers >= 7.0.100-1.23211.1",
       "Microsoft.NET.ILLink.Tasks >= 7.0.100-1.23211.1",
-      "itext7 >= 8.0.2"
+      "Newtonsoft.Json >= 13.0.3",
+      "itext7 >= 8.0.2",
+      "itext7.bouncy-castle-adapter >= 8.0.2",
+      "itext7.pdfhtml >= 5.0.2"
     ],
     "net7.0-windows10.0.19041": [
       "Microsoft.AspNetCore.Components.WebView.Maui >= 7.0.101",
@@ -76313,7 +78265,10 @@
       "Microsoft.Maui.Graphics >= 7.0.101",
       "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop >= 7.0.101",
       "Microsoft.WindowsAppSDK >= 1.2.221209.1",
-      "itext7 >= 8.0.2"
+      "Newtonsoft.Json >= 13.0.3",
+      "itext7 >= 8.0.2",
+      "itext7.bouncy-castle-adapter >= 8.0.2",
+      "itext7.pdfhtml >= 5.0.2"
     ]
   },
   "packageFolders": {
@@ -76323,11 +78278,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ad\\Cw\\Cw.csproj",
+      "projectUniqueName": "C:\\Users\\LENOVO\\RiderProjects\\adcw\\Cw.csproj",
       "projectName": "Cw",
-      "projectPath": "D:\\ad\\Cw\\Cw.csproj",
+      "projectPath": "C:\\Users\\LENOVO\\RiderProjects\\adcw\\Cw.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\ad\\Cw\\obj\\",
+      "outputPath": "C:\\Users\\LENOVO\\RiderProjects\\adcw\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -76346,7 +78301,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -76418,6 +78372,10 @@
             "version": "[7.0.100-1.23211.1, )",
             "autoReferenced": true
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
           "Xamarin.Android.Glide": {
             "target": "Package",
             "version": "[4.13.2.2, )",
@@ -76476,6 +78434,14 @@
           "itext7": {
             "target": "Package",
             "version": "[8.0.2, )"
+          },
+          "itext7.bouncy-castle-adapter": {
+            "target": "Package",
+            "version": "[8.0.2, )"
+          },
+          "itext7.pdfhtml": {
+            "target": "Package",
+            "version": "[5.0.2, )"
           }
         },
         "imports": [
@@ -76598,9 +78564,21 @@
             "version": "[7.0.100-1.23211.1, )",
             "autoReferenced": true
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
           "itext7": {
             "target": "Package",
             "version": "[8.0.2, )"
+          },
+          "itext7.bouncy-castle-adapter": {
+            "target": "Package",
+            "version": "[8.0.2, )"
+          },
+          "itext7.pdfhtml": {
+            "target": "Package",
+            "version": "[5.0.2, )"
           }
         },
         "imports": [
@@ -76711,9 +78689,21 @@
             "version": "[7.0.100-1.23211.1, )",
             "autoReferenced": true
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
           "itext7": {
             "target": "Package",
             "version": "[8.0.2, )"
+          },
+          "itext7.bouncy-castle-adapter": {
+            "target": "Package",
+            "version": "[8.0.2, )"
+          },
+          "itext7.pdfhtml": {
+            "target": "Package",
+            "version": "[5.0.2, )"
           }
         },
         "imports": [
@@ -76823,9 +78813,21 @@
             "version": "[1.2.221209.1, )",
             "autoReferenced": true
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
           "itext7": {
             "target": "Package",
             "version": "[8.0.2, )"
+          },
+          "itext7.bouncy-castle-adapter": {
+            "target": "Package",
+            "version": "[8.0.2, )"
+          },
+          "itext7.pdfhtml": {
+            "target": "Package",
+            "version": "[5.0.2, )"
           }
         },
         "imports": [

@@ -42,26 +42,30 @@
         transition: background-color 0.5s;
     }
 
-        .order-now-button:hover {
-            background-color: #0056b3;
-        }
+    .order-now-button:hover {
+        background-color: #0056b3;
+    }
+
+    .logo-image {
+        width: 40%;
+        max-width: 200px;
+        height: auto;
+        margin: 0 auto;
+    }
 </style>
 
-<!-- Display the welcome message, system description, and an "Order Now" button. -->
 <div class="container welcome-container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="welcome-heading">Bilserium Cafe</h1>
-            <p class="lead">POS SYSTEM</p>
-
-            <!-- Button to navigate to the login page when clicked. -->
+            <img src="images/cafe.jpg" alt="Café de Bislerium" class="logo-image">
+            <h1 class="welcome-heading">Café de Bislerium </h1>
+            <p class="lead">Point of Sale</p>
             <a href="#" class="btn btn-primary btn-lg order-now-button" @onclick="NavigateToLogin">Order Now</a>
         </div>
     </div>
 </div>
 
 @code {
-    // Method to navigate to the login page.
     private void NavigateToLogin()
     {
         NavigationManager.NavigateTo("/login");

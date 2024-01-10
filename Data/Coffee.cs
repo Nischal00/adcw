@@ -12,13 +12,11 @@ namespace Cw.Data
         public decimal Price { get; set; }
         public bool Selected { get; set; }
         public List<AddOns> AddOns { get; set; } = new List<AddOns>();
-        public string SelectedAddOn { get; set; }
-        public decimal AddOnPrice { get; set; }
         public decimal TotalPrice
         {
             get
             {
-                return Price + AddOnPrice;
+                return Price + AddOns.Sum(a=>a.AddOnPrice);
             }
         }
     }

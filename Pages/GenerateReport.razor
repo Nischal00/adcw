@@ -2,6 +2,11 @@
 @using Cw.Data
 @using System.IO
 @using System.Text
+@using iText.Html2pdf
+@using iText.Kernel.Pdf
+@using iText.Layout
+@using iText.Layout.Element
+@using Newtonsoft.Json.Linq
 @inject NavigationManager NavigationManager
 
 <h3>Sales Report</h3>
@@ -10,9 +15,9 @@
 <input type="date" id="datepicker" @bind="selectedDate" />
 <button class="btn btn-primary" @onclick="GenerateHtmlReport">Generate Report</button>
 <button class="btn btn-secondary" @onclick="NavigateBack">Back to Home</button>
-
+@inject IJSRuntime JS
 @code {
-    private DateTime selectedDate;
+    private DateTime selectedDate = DateTime.Now;
     private AllOrdersList allOrders;
 
     protected override void OnInitialized()
@@ -22,7 +27,7 @@
 
     private void LoadOrders()
     {
-        string orderFilePath = "D:\\CourseWork\\Order.json";
+        string orderFilePath = "D:\\CourseWork\\Orders.json";
 
         if (File.Exists(orderFilePath))
         {
@@ -35,7 +40,7 @@
         }
     }
 
-    private void GenerateHtmlReport()
+    private async void GenerateHtmlReport()
     {
         // Filter orders for the selected date or month
         var selectedOrders = allOrders.AllOrders
@@ -125,14 +130,32 @@
 
         // Save the HTML content to a file
         string htmlFilePath = $"D:\\CourseWork\\DailySalesReport_{selectedDate:yyyyMMdd}.html";
+
+        generatePDF(selectedDate, htmlContent.ToString());
         File.WriteAllText(htmlFilePath, htmlContent.ToString());
 
+        
+         Utils.setAlert(JS,"", "PDF Generated Successfully");
         // Open the generated HTML file
-        System.Diagnostics.Process.Start(htmlFilePath);
     }
 
     private void NavigateBack()
     {
         NavigationManager.NavigateTo("/admin");
     }
+
+    private void generatePDF(DateTime selectedDate, String htmlContent)
+    {
+        
+        // Create a new PDF document
+        PdfDocument pdfDocument = new PdfDocument(new PdfWriter($"D:\\CourseWork\\report_{selectedDate:yyyyMMdd}.pdf"));
+  
+        var document = HtmlConverter.ConvertToDocument(htmlContent, pdfDocument, new ConverterProperties());
+ 
+        // Close the document
+        document.Close();
+
+        Console.WriteLine("PDF generated successfully!");
+    }
+    
 }

@@ -1,1 +1,1 @@
-D:\ad\Cw\Cw.csproj;x64
+C:\Users\LENOVO\RiderProjects\adcw\Cw.csproj;x64

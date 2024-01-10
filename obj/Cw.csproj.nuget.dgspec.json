@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ad\\Cw\\Cw.csproj": {}
+    "C:\\Users\\LENOVO\\RiderProjects\\adcw\\Cw.csproj": {}
   },
   "projects": {
-    "D:\\ad\\Cw\\Cw.csproj": {
+    "C:\\Users\\LENOVO\\RiderProjects\\adcw\\Cw.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ad\\Cw\\Cw.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\RiderProjects\\adcw\\Cw.csproj",
         "projectName": "Cw",
-        "projectPath": "D:\\ad\\Cw\\Cw.csproj",
+        "projectPath": "C:\\Users\\LENOVO\\RiderProjects\\adcw\\Cw.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\ad\\Cw\\obj\\",
+        "outputPath": "C:\\Users\\LENOVO\\RiderProjects\\adcw\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -30,7 +30,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -102,6 +101,10 @@
               "version": "[7.0.100-1.23211.1, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Xamarin.Android.Glide": {
               "target": "Package",
               "version": "[4.13.2.2, )",
@@ -160,6 +163,14 @@
             "itext7": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "itext7.pdfhtml": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             }
           },
           "imports": [
@@ -282,9 +293,21 @@
               "version": "[7.0.100-1.23211.1, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "itext7": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "itext7.pdfhtml": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             }
           },
           "imports": [
@@ -395,9 +418,21 @@
               "version": "[7.0.100-1.23211.1, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "itext7": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "itext7.pdfhtml": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             }
           },
           "imports": [
@@ -507,9 +542,21 @@
               "version": "[1.2.221209.1, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "itext7": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "itext7.pdfhtml": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             }
           },
           "imports": [

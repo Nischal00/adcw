@@ -11,10 +11,13 @@
 
     @if (ShouldShowLogoutButton())
     {
-        <div class="logout-button">
+        <div class="logout-button" style="position:fixed;right: 0">
             <button class="btn btn-outline-dark" @onclick="Logout">Logout</button>
+          <button type="button" class="btn btn-secondary btn-outline-dark" @onclick="NavigateBack">Back</button>
         </div>
+        
     }
+      
 </div>
 
 <style>
@@ -30,8 +33,9 @@
     }
 
     .logout-button {
-        margin-top: 10px;
+        
         margin-right: 10px;
+        place-items: center;
     }
 
     .logout-button button {
@@ -48,6 +52,10 @@
 </style>
 
 @code {
+    private void NavigateBack()
+    {
+        NavigationManager.NavigateTo("/admin");
+    }
     private void Logout()
     {
         // Add logic to perform logout actions
@@ -59,4 +67,5 @@
         return NavigationManager.Uri.Contains("/admin", StringComparison.OrdinalIgnoreCase)
             || NavigationManager.Uri.Contains("/order", StringComparison.OrdinalIgnoreCase);
     }
+   
 }

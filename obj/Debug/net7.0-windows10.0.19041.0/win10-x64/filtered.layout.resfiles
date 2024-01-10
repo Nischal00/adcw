@@ -48,6 +48,7 @@ appiconWideTile.scale-125.png
 appiconWideTile.scale-150.png
 appiconWideTile.scale-200.png
 appiconWideTile.scale-400.png
+cafe.scale-100.jpg
 dotnet_bot.scale-100.png
 dotnet_bot.scale-125.png
 dotnet_bot.scale-150.png
@@ -65,14 +66,15 @@ Shared\MainLayout.razor.css
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\css\open-iconic\FONT-LICENSE
 wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css
 wwwroot\css\open-iconic\font\fonts\open-iconic.eot
 wwwroot\css\open-iconic\font\fonts\open-iconic.otf
 wwwroot\css\open-iconic\font\fonts\open-iconic.svg
 wwwroot\css\open-iconic\font\fonts\open-iconic.ttf
 wwwroot\css\open-iconic\font\fonts\open-iconic.woff
-wwwroot\css\open-iconic\FONT-LICENSE
 wwwroot\css\open-iconic\ICON-LICENSE
 wwwroot\css\open-iconic\README.md
 wwwroot\favicon.ico
+wwwroot\images\cafe.jpg
 wwwroot\index.html

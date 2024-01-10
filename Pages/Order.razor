@@ -8,7 +8,21 @@
 @inject NavigationManager NavigationManager
 
 
-<h3>Order Coffee</h3>
+<h3 class="order-coffee">Order Coffee</h3>
+ <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+    .order-coffee {
+            color: #155724;
+          
+            padding: 10px;
+           
+           text-align: center;
+           place-items: center;
+        }
+    </style>
 @code {
     // Lists to store available coffees, add-ons, and ordered coffees
     List<Coffee> availableCoffees = new List<Coffee>
@@ -181,7 +195,7 @@
                 Coffees = orderedCoffees.Select(coffee => new CoffeeDetails
                 {
                     CoffeeName = coffee.Name,
-                    Addon = coffee.AddOns.Any() ? string.Join(", ", coffee.AddOns) : null,
+                    Addon = coffee.AddOns.Any() ? string.Join(", ", coffee.AddOns.Select(((a) => a.Name))) : null,
                     Price = coffee.TotalPrice
                 }).ToList()
             };
@@ -299,15 +313,18 @@
         }
 
         <h4>Select Coffee:</h4>
-        <div>
+        <div class="coffee-list">
             @foreach (var coffee in availableCoffees)
             {
+                <br/>
                 <div>
                     <label>
                         <input type="checkbox" @bind="coffee.Selected" /> @coffee.Name - $@coffee.Price
                     </label>
 
+                    <br/>
                     <span>Addons</span>
+                    <br/>
                     <!-- Use the correct variable for the inner loop -->
                     @foreach (var addOn in coffeAddonsMap[coffee.Name])
                     {
@@ -339,7 +356,7 @@ else
                     @coffee.Name - $@coffee.Price
                     @if (coffee.AddOns.Any())
                     {
-                        //<span> with Add-Ons (@string.Join(", ", coffee.AddOns)) - $@coffee.AddOnPrice</span>
+                        <span> with Add-Ons (@string.Join(", ", coffee.AddOns.Select(((a) => a.Name))) - $@coffee.AddOns.Sum(a => a.AddOnPrice)</span>
                     }
                     <span> Total Price: $@coffee.TotalPrice</span>
 
@@ -355,7 +372,6 @@ else
                 <label for="phoneNumberInput">Phone Number:</label>
                 <input type="tel" class="form-control" id="phoneNumberInput" @bind="CheckPhoneNumber" required pattern="[0-9]{10}">
             </div>
-
             <button type="button" class="btn btn-primary" @onclick="SubmitForm">Submit</button>
         </form>
 
@@ -383,7 +399,7 @@ else
 
     }
 
-
+   
 }
 
 
