@@ -118,10 +118,10 @@ else
     <EditForm Model="@updateModel" OnValidSubmit="@PerformMemberStatusUpdate">
         <div class="form-group">
             <label for="isRegular">Is Regular:</label>
-            <select class="form-control" id="isRegular" @bind="@updateModel.IsRegular">
-                <option value="true">True</option>
-                <option value="false">False</option>
-            </select>
+               <label>
+                                    <input type="checkbox" @bind="@currentMemeber.IsRegular" />
+                                </label>
+
         </div>
 
         <button type="submit" class="btn btn-primary">Update Member Status</button>
@@ -154,6 +154,7 @@ else
     private string alertMessage = "";
     private string alertClass = "";
 
+    private Member currentMemeber;
     private void CheckPhoneNumber()
     {
         string p1 = "D:\\CourseWork\\Members.json";
@@ -163,12 +164,13 @@ else
             // Read the existing list from the file
             string jsonFromFile = File.ReadAllText(p1);
             List<Member> membersList = JsonSerializer.Deserialize<List<Member>>(jsonFromFile);
-
+            var member = membersList.Find(m => m.PhoneNumber == phoneNumberModel.PhoneNumber);
             // Check if the phone number exists in the members list
-            if (membersList.Any(m => m.PhoneNumber == phoneNumberModel.PhoneNumber))
+            if (member !=null)
             {
                 // Set the flag to indicate phone number entered
                 isPhoneNumberEntered = true;
+                currentMemeber = member;
             }
             else
             {
@@ -198,9 +200,8 @@ else
 
             if (foundMember != null)
             {
-                // Update the IsRegular status based on admin input
-                foundMember.IsRegular = updateModel.IsRegular;
 
+                foundMember.IsRegular = currentMemeber.IsRegular;
                 // Serialize the updated list and write to the file
                 string updatedJson = JsonSerializer.Serialize(membersList, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(p1, updatedJson);

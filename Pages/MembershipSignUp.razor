@@ -87,7 +87,7 @@
 
         <!-- Buttons to submit the registration and navigate back to the admin page -->
         <button type="submit" class="btn btn-primary">Register Member</button>
-        <button type="submit" class="btn btn-secondary" @onclick="NavigateBack">Back</button>
+        <button type="button" class="btn btn-secondary" @onclick="NavigateBack">Back</button>
     </EditForm>
 }
 else
@@ -108,6 +108,7 @@ else
     // Flag to track the registration status
     private bool isRegistrationSuccessful = false;
 
+    private bool isRegular = false;
     // Method to handle the form submission on successful validation
     private void HandleValidSubmit()
     {
@@ -127,7 +128,7 @@ else
         else
         {
             // If the file exists, read the existing list, add the new member, and save the updated list
-            string jsonFromFile = File.ReadAllText(p1);
+            string jsonFromFile = File.ReadAllText("D:\\CourseWork\\Members.json");
             List<Member> membersList = JsonSerializer.Deserialize<List<Member>>(jsonFromFile);
             membersList.Add(member);
 
