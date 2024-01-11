@@ -3,28 +3,24 @@
     "Name": "John Doe",
     "PhoneNumber": "1234567890",
     "OrderCount": 40,
-    "IsRedemptionAvailable": true,
     "IsRegular": true
   },
   {
     "Name": "Jane Smith",
     "PhoneNumber": "1111111111",
     "OrderCount": 50,
-    "IsRedemptionAvailable": false,
     "IsRegular": false
   },
   {
     "Name": "Bob Johnson",
     "PhoneNumber": "555-123-4567",
     "OrderCount": 5,
-    "IsRedemptionAvailable": true,
     "IsRegular": false
   },
   {
     "Name": "Alice Williams",
     "PhoneNumber": "444-789-0123",
     "OrderCount": 10,
-    "IsRedemptionAvailable": false,
     "IsRegular": false
   }
 ]
