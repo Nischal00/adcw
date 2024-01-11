@@ -8,40 +8,64 @@
 @inject NavigationManager NavigationManager
 
 <style>
+    body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .container {
+        max-width: 500px;
+        padding: 15px;
+        border-radius: 15px;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+    
+    h3 {
+        text-align: center;
+        color: #343a40;
+    }
+    
     .form-group {
-        margin-bottom: 1rem;
+        margin-bottom: 15px;
     }
-
+    
     .form-control {
-        display: block;
-        width: 100%;
-        padding: .375rem .75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
+        border-radius: 5px;
         border: 1px solid #ced4da;
-        border-radius: .25rem;
-        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
-
+    
     .btn-primary {
-        color: #fff;
         background-color: #007bff;
-        border-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.5s;
     }
-
+    
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+    
     .btn-secondary {
-        color: #fff;
+        margin-left: 10px;
         background-color: #6c757d;
-        border-color: #6c757d;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.5s;
     }
-
-    .alert-success {
-        color: #155724;
-        background-color: #d4edda;
-        border-color: #c3e6cb;
+    
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+    
+    .alert {
+        margin-top: 20px;
     }
 </style>
 
